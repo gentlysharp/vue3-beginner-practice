@@ -21,3 +21,11 @@ yarn build
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Set Router & vuex
+
+create router and vuex with cli.
+
+## bootstrap cdn
+
+add the bootstrap cdn in index.html
