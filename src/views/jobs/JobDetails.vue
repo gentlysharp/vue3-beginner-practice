@@ -1,32 +1,16 @@
 <template>
   <h1>Job Detils</h1>
   <div>
-    The Job Id is {{route.params.id}}
+    The Job Id is {{id}}
   </div>  
 </template>
 
 <script>
-import { useRoute } from 'vue-router'
-// import { ref, watch } from 'vue'
+// router 에서 props로 설정이 되어있으므로, 다음과 같이 설정할 수 있다.
 export default {
-  setup(){
-    const route = useRoute()
-    // id에 따라 비동기 요청을 원하게 된다면 아래 코드와 같이 watch를 사용하여 
-    // 구현할 수 있다. 
-    // const userData = ref()
-
-    // watch(
-    //   () => route.params.id,
-    //   async newId => {
-    //     userData.value = await fetchUser(newId)
-    //   }
-    // )
-    
-
-    return {
-      route
-    }
-  }
+  props:{
+    id:String
+  },
 }
 </script>
 
