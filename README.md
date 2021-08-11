@@ -120,6 +120,43 @@ param으로 id를 정의해서 넘길 수 있다.
 </router-link>
 ```
 
+## Router with props
+
+받는 쪽에서는 이를 props로 받을 수 있다.
+
+다음과 같이 props를 true로 설정해 놓으면, JonDetails.vue 는 id라는 변수를 props로 받아서 사용할 수 있게 된다.
+
+`/route/index.js`
+
+```jsx
+ {
+    path: '/jobs/:id',
+    name: 'JobDetails',
+    component: () => import(/* webpackChunkName: "job-details" */ '../views/jobs/JobDetails.vue'),
+		props:true
+  },
+```
+
+`/views/jobs/JobDetails.vue`
+
+```jsx
+<template>
+  <h1>Job Detils</h1>
+  <div>
+    The Job Id is {{id}}
+  </div>
+</template>
+
+<script>
+// router 에서 props로 설정이 되어있으므로, 다음과 같이 설정할 수 있다.
+export default {
+  props:{
+    id:String
+  },
+}
+</script>
+```
+
 ## 파일 구조
 
 - /src/views/jobs/jobs.vue
